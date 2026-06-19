@@ -44,6 +44,23 @@ contradictions and echo chambers, and **flags load-bearing claims that are still
 weakly evidenced** — your shortlist for the Test stage. The ledger is normally
 written by the `/research` workflow, but you can hand-author or edit it.
 
+## `illustrate.py` — free concept images for the top ideas
+
+```bash
+python3 tools/illustrate.py --check                         # preflight plan auth
+python3 tools/illustrate.py --prompt "<scene>" --out businesses/<slug>/illustrations/foo.png
+python3 tools/illustrate.py --manifest jobs.json            # batch: [{prompt, out, label?}]
+```
+
+Renders concept illustrations through the **Codex CLI's native `image_generation`
+tool**, which is covered by a logged-in ChatGPT/Codex plan — **$0 in API charges**.
+It deliberately does *not* use the `imagegen` skill's `image_gen.py`, which calls
+the metered OpenAI Image API and needs `OPENAI_API_KEY`. `codex exec` renders the
+image into its session transcript as base64; this script runs one job per image,
+finds that run's transcript, and decodes the PNG to disk. Requires `codex login`
+(plan auth); run `--check` to confirm. Used by `/illustrate` — **illustrate the
+top filtered survivors only, never the whole pool** (see `commands/illustrate.md`).
+
 ## `score.py` — completeness & evidence proxy
 
 ```bash

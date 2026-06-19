@@ -40,6 +40,7 @@ are under `${CLAUDE_PLUGIN_ROOT}`; user ideas live in `./businesses/` in their c
 | `/test` | 6 Test | Experiment plan + kill thresholds | `frameworks/06-test.md` |
 | `/decide`, `/simplify` | 7 Decide | Decision memo + plain-language pitch | `frameworks/07-decide.md` |
 | `/research` | ✻ cross-cutting | Cited research + graded evidence | `frameworks/research.md` |
+| `/illustrate` | ✻ cross-cutting | Free concept images of the top ideas | `tools/illustrate.py` |
 
 Read the relevant framework before doing a stage. Specialized agents in `agents/`
 carry the full instructions.
