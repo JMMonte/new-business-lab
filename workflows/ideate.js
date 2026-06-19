@@ -30,7 +30,7 @@ const LEAF_MODEL = 'haiku';
 // Soft scope, not a structural ban: leaves MAY delegate, but only a little, so the
 // run stays bounded by the per-stage caps + cheap model rather than by removing a
 // capability. Keeps total in the "few dozen", never "hundreds".
-const SCOPE = ' Keep this proportionate: do the work yourself in a handful of tool ' +
+const NO_NEST = ' Keep this proportionate: do the work yourself in a handful of tool ' +
   'calls. You MAY delegate to at most ~2 helper subagents ONLY if it clearly speeds ' +
   'real work — never spawn a fleet, never nest deeply; prefer doing it directly.';
 // BASE agent count (the workflow's own calls): lenses + combine + negate(cap) +
