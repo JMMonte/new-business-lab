@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Private user data — NEVER ship with the plugin.
+# (founder profile + local config)
+.business-lab/
+
+# The user's own ideas/runs. Ignore the contents, keep the folder + its README.
+businesses/*
+!businesses/.gitkeep
+!businesses/README.md
+
+# Local scratch
+*.local.md

@@ -1,0 +1,35 @@
+{
+  "name": "ZenRoll",
+  "currency": "USD",
+  "horizon_months": 60,
+  "notes": "Worked example. Payroll + tip-compliance SaaS for independent US restaurants. Most inputs are [benchmarked] off public payroll-SaaS comps; new_customers and channel CAC are [guess] and are the load-bearing assumptions. base fully specified; pessimistic/optimistic are overrides.",
+  "scenarios": {
+    "base": {
+      "arpa_monthly": 79.0,
+      "variable_cost_per_account_monthly": 22.0,
+      "fixed_monthly": 60000.0,
+      "new_customers_month_1": 15,
+      "monthly_growth_rate": 0.07,
+      "cac": 350.0,
+      "monthly_churn": 0.035,
+      "starting_cash": 750000.0,
+      "monthly_expansion_rate": 0.004
+    },
+    "pessimistic": {
+      "arpa_monthly": 69.0,
+      "variable_cost_per_account_monthly": 28.0,
+      "new_customers_month_1": 9,
+      "monthly_growth_rate": 0.04,
+      "cac": 520.0,
+      "monthly_churn": 0.055
+    },
+    "optimistic": {
+      "arpa_monthly": 89.0,
+      "new_customers_month_1": 22,
+      "monthly_growth_rate": 0.10,
+      "cac": 260.0,
+      "monthly_churn": 0.022,
+      "monthly_expansion_rate": 0.008
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// Worked-example evidence ledger for ZenRoll. Illustrative findings.
+// Run: python3 tools/evidence.py businesses/_example-zenroll/evidence.jsonl
+//
+// MARKET SIZE — triangulated across official + independent
+{"claim_id":"market-size","claim":"~375k US restaurants have tipped staff","dimension":"market","stance":"supports","source_type":"T1","url":"https://www.bls.gov/iag/tgs/iag722.htm","origin":"bls.gov","date":"2025-05","kind":"factual","note":"BLS full-service establishment counts"}
+{"claim_id":"market-size","claim":"~375k US restaurants have tipped staff","dimension":"market","stance":"supports","source_type":"T2","url":"https://restaurant.org/research/","origin":"restaurant.org","date":"2025-09","kind":"factual","note":"National Restaurant Association segment breakdown"}
+{"claim_id":"market-size","claim":"~375k US restaurants have tipped staff","dimension":"market","stance":"supports","source_type":"T4","url":"https://toasttab.com/blog/","origin":"toasttab.com","date":"2024-11","kind":"factual","adjust":-2,"note":"Vendor blog cites similar number; discounted for conflict of interest"}
+//
+// DEMAND / PAIN — load-bearing; community voice-of-customer, mixed
+{"claim_id":"demand-tip-pain","claim":"Owners feel acute, switch-worthy tip-compliance pain","dimension":"demand","stance":"supports","source_type":"T5","url":"https://reddit.com/r/restaurateur/1","origin":"reddit.com/r/restaurateur","date":"2026-03","kind":"revealed","voc":{"authenticity":5,"specificity":5,"intensity":5,"in_segment":true},"load_bearing":true,"note":"'I pay my bookkeeper ~$600/mo basically just to get tips right'"}
+{"claim_id":"demand-tip-pain","claim":"Owners feel acute, switch-worthy tip-compliance pain","dimension":"demand","stance":"supports","source_type":"T5","url":"https://news.ycombinator.com/item","origin":"news.ycombinator.com","date":"2026-01","kind":"stated","voc":{"authenticity":4,"specificity":4,"intensity":4,"in_segment":true},"load_bearing":true,"note":"Former operator: tip reconciliation was the scariest part of payroll"}
+{"claim_id":"demand-tip-pain","claim":"Owners feel acute, switch-worthy tip-compliance pain","dimension":"demand","stance":"supports","source_type":"T5","url":"https://g2.com/products/gusto/reviews","origin":"g2.com","date":"2025-12","kind":"revealed","voc":{"authenticity":4,"specificity":5,"intensity":4,"in_segment":true},"load_bearing":true,"note":"1-3 star Gusto reviews specifically cite weak tip handling -> revealed gap"}
+{"claim_id":"demand-tip-pain","claim":"Owners feel acute, switch-worthy tip-compliance pain","dimension":"demand","stance":"contradicts","source_type":"T5","url":"https://reddit.com/r/smallbusiness/2","origin":"reddit.com/r/smallbusiness","date":"2026-02","kind":"stated","voc":{"authenticity":4,"specificity":2,"intensity":2,"in_segment":true},"load_bearing":true,"note":"'Gusto tips are fine, never think about it' — pain not universal"}
+//
+// PRICING — benchmarked off competitor pages
+{"claim_id":"price-anchor","claim":"Comparable payroll runs ~$40 base + $6/employee","dimension":"pricing","stance":"supports","source_type":"T4","url":"https://gusto.com/product/pricing","origin":"gusto.com","date":"2026-04","kind":"factual","adjust":1,"note":"Public list pricing; against-interest (they show the low end)"}
+{"claim_id":"price-anchor","claim":"Comparable payroll runs ~$40 base + $6/employee","dimension":"pricing","stance":"supports","source_type":"T3","url":"https://nerdwallet.com/payroll","origin":"nerdwallet.com","date":"2026-02","kind":"factual","note":"Independent comparison roundup"}
+//
+// CHANNEL CAC — load-bearing; thin, mostly benchmark + vendor
+{"claim_id":"channel-cac","claim":"Restaurant SaaS CAC is ~$400-900","dimension":"channel","stance":"supports","source_type":"T3","url":"https://saastr.com/","origin":"saastr.com","date":"2024-08","kind":"benchmarked","load_bearing":true,"note":"SMB vertical SaaS CAC benchmarks; stale-ish"}
+//
+// COMPETITION / MOAT RISK — incumbents move fast
+{"claim_id":"incumbent-speed","claim":"Incumbents can close the tip-compliance feature gap quickly","dimension":"competition","stance":"supports","source_type":"T2","url":"https://techcrunch.com/","origin":"techcrunch.com","date":"2025-10","kind":"factual","load_bearing":true,"note":"Gusto + Toast shipping cadence on compliance features"}
+{"claim_id":"incumbent-speed","claim":"Incumbents can close the tip-compliance feature gap quickly","dimension":"competition","stance":"supports","source_type":"T1","url":"https://toasttab.com/investors","origin":"sec.gov","date":"2025-08","kind":"factual","note":"Toast 10-Q: R&D spend + payroll product expansion"}
+//
+// ASTROTURF EXAMPLE — many findings, one origin -> echo chamber, should be penalized
+{"claim_id":"hype-demand","claim":"There's huge buzz for tip-compliance tools","dimension":"demand","stance":"supports","source_type":"T5","url":"https://x.com/post1","origin":"x.com/zenroll_fan","date":"2026-05","kind":"stated","voc":{"authenticity":1,"specificity":2,"intensity":3,"in_segment":false},"note":"Looks like promo"}
+{"claim_id":"hype-demand","claim":"There's huge buzz for tip-compliance tools","dimension":"demand","stance":"supports","source_type":"T5","url":"https://x.com/post2","origin":"x.com/zenroll_fan","date":"2026-05","kind":"stated","voc":{"authenticity":1,"specificity":2,"intensity":3,"in_segment":false},"note":"Same account, repeated"}
+{"claim_id":"hype-demand","claim":"There's huge buzz for tip-compliance tools","dimension":"demand","stance":"supports","source_type":"T5","url":"https://x.com/post3","origin":"x.com/zenroll_fan","date":"2026-05","kind":"stated","voc":{"authenticity":1,"specificity":1,"intensity":3,"in_segment":false},"note":"Same account again"}
+{"claim_id":"hype-demand","claim":"There's huge buzz for tip-compliance tools","dimension":"demand","stance":"supports","source_type":"T5","url":"https://x.com/post4","origin":"x.com/zenroll_fan","date":"2026-05","kind":"stated","voc":{"authenticity":1,"specificity":1,"intensity":2,"in_segment":false},"note":"Same account again"}

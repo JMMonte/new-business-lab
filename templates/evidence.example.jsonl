@@ -1,0 +1,25 @@
+// evidence.jsonl — one research finding per line. Comment lines (// or #) are ignored.
+// Run: python3 tools/evidence.py businesses/<slug>/evidence.jsonl
+//
+// Fields:
+//   claim_id      stable id grouping findings about the same claim (kebab-case)
+//   claim         human-readable statement the finding bears on
+//   dimension     demand | market | competition | pricing | channel | regulation | team
+//   stance        "supports" (default) | "contradicts"
+//   source_type   T1 primary/official · T2 independent · T3 trade · T4 vendor · T5 community/social · T6 unknown
+//   url           link to the source
+//   origin        domain or author cluster — used to detect echo chambers & independence (5 articles, 1 origin = 1 source)
+//   date          YYYY-MM (for staleness)
+//   kind          revealed | intent | stated | measured | factual   (revealed/measured score highest)
+//   voc           OPTIONAL — include for "what people say"; triggers Axis-2 voice-of-customer scoring:
+//                 { "authenticity":0-5, "specificity":0-5, "intensity":0-5, "in_segment":true|false }
+//   adjust        OPTIONAL credibility nudge for factual sources: -2 conflict-of-interest .. +1 claim-against-interest
+//   load_bearing  OPTIONAL true — the analysis depends on this claim; tool flags it if still weak
+//   note          short free-text takeaway / quote
+//
+// --- factual claim, official source ---
+{"claim_id":"market-size","claim":"~749k US restaurants","dimension":"market","stance":"supports","source_type":"T1","url":"https://www.bls.gov/...","origin":"bls.gov","date":"2025-05","kind":"factual","note":"BLS establishment count"}
+// --- voice-of-customer, revealed preference, organic community post ---
+{"claim_id":"demand-pain","claim":"Owners pay accountants just for tip reconciliation","dimension":"demand","stance":"supports","source_type":"T5","url":"https://reddit.com/r/...","origin":"reddit.com/r/restaurateur","date":"2026-03","kind":"revealed","voc":{"authenticity":5,"specificity":5,"intensity":4,"in_segment":true},"load_bearing":true,"note":"'I pay my bookkeeper $600/mo basically just for tips'"}
+// --- a contradicting finding (log these too) ---
+{"claim_id":"demand-pain","claim":"Owners pay accountants just for tip reconciliation","dimension":"demand","stance":"contradicts","source_type":"T5","url":"https://reddit.com/r/...","origin":"reddit.com/r/smallbusiness","date":"2026-02","kind":"stated","voc":{"authenticity":4,"specificity":3,"intensity":2,"in_segment":true},"note":"'Gusto handles our tips fine, never think about it'"}

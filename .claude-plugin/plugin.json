@@ -1,0 +1,14 @@
+{
+  "name": "new-business-lab",
+  "version": "0.2.0",
+  "description": "A disciplined multi-agent pipeline for evaluating new business ideas before you spend real resources. Understand the problem, generate and stress-test ideas with parallel subagents, then think/audit/simulate/test — and end with a plain-language verdict anyone could understand. Knows who's using it and starts from their desire, not a market score.",
+  "author": { "name": "João Montenegro" },
+  "homepage": "https://github.com/joaomontenegro/new-business-lab",
+  "keywords": [
+    "business", "ideation", "problem-definition", "due-diligence",
+    "market-research", "startup", "venture", "multi-agent"
+  ],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills"
+}
